@@ -1,8 +1,6 @@
 package com.albertson.spark_poc.presentation.fragment
 
-import android.annotation.SuppressLint
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,7 +11,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
-import androidx.paging.LOGGER
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.albertson.spark_poc.R
 import com.albertson.spark_poc.data.local.entity.Community

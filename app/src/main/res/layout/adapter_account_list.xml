@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="accountItem"
+            type="com.albertson.spark_poc.core.state.AccountState" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_main_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="@dimen/_8dp"
+        android:background="@drawable/bg_rect_rounded"
+        android:padding="12dp">
+
+        <TextView
+            android:id="@+id/listItem"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:gravity="center_vertical"
+            android:text="@{accountItem.title}"
+            android:textColor="@{accountItem.enable ? @color/neutrals_text_color : @color/dark_grey}"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@id/statusIndicator"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/memberStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:layout_marginTop="2dp"
+            android:textColor="@{accountItem.enable ? @color/neutrals_text_color : @color/dark_grey}"
+            android:text="@{accountItem.subTitle}"
+            app:layout_constraintStart_toStartOf="@id/listItem"
+            app:layout_constraintTop_toBottomOf="@+id/listItem" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/statusIndicator"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:gravity="center_vertical"
+            android:src="@{accountItem.icon}"
+            android:tint="@{accountItem.enable ? @color/secondary : @color/dark_grey}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/right_arrow"
+            android:tint="@{accountItem.enable ? @color/neutrals_text_color : @color/dark_grey}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

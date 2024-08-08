@@ -58,4 +58,10 @@
     <string name="accept_label">Accept</string>
     <string name="invited_title_label">You\'re invited to a community</string>
 
+    <string name="points_label"><u>100 Points</u></string>
+    <string name="saving_label">Start saving</string>
+    <string name="logout_label">Logout</string>
+
+
+
 </resources>

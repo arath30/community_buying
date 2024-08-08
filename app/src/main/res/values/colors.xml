@@ -5,5 +5,8 @@
     <color name="primary">#e51621</color>
     <color name="secondary">#960d10</color>
     <color name="grey">#E0E0E0</color>
+    <color name="dark_grey">#AFAEAC</color>
+    <color name="neutrals_text_color">#38332E</color>
+
 
 </resources>
