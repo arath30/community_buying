@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">Safeway Community</string>
+    <string name="community_heading">Communities</string>
+    <string name="community_home_page">Home</string>
+    <string name="member_heading">Members</string>
+    <string name="product_list_heading">Product list</string>
+    <string name="community_not_found_heading">No communities found \n please click on the button to create</string>
+    <string name="community_create">Create</string>
+    <string name="community_name">Community Name</string>
+    <string name="community_member">Members</string>
+    <string name="member_not_found_heading">No member found \n please click on the button to create</string>
+    <string name="add_member_heading">Add Member</string>
+    <string name="member_first_name">First Name</string>
+    <string name="member_Last_name">Last Name</string>
+    <string name="member_email_address">Email address</string>
+    <string name="add_member_button">Add</string>
+    <string name="add_to_community"><u>add to community</u></string>
+    <string name="home_page_product_one">Lean Proteins</string>
+    <string name="home_page_product_two">Marinades and more</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="please_enter_community_name">Please enter community name</string>
+    <string name="community_name_already_exist">Community name already exist</string>
+    <string name="empty_cart_label">Your cart is empty. Let\'s add to it.</string>
+    <string name="est_total_label">Estimated Total</string>
+    <string name="checkout_label">Checkout</string>
+    <string name="cart_heading">Cart</string>
+    <string name="add_to_community_label">Add to community</string>
+    <string name="create_community_label">Create community</string>
+    <string name="choose_community_label">Choose community</string>
+    <string name="choose_qty_label">Choose quantity</string>
+    <string name="community_not_available_label">Community not available</string>
+    <string name="continue_shopping_label"><u>Continue shopping</u></string>
+    <string name="view_added_products_label">View added products</string>
+    <string name="success_msg_label">Successfully added to community</string>
+    <string name="community_label">Community : </string>
+    <string name="member_label">Added by (Member) : </string>
+    <string name="total_label">Total </string>
+    <string name="pending_label">Pending </string>
+    <string name="sign_in_description">Lets Get Started</string>
+    <string name="sign_in_details">Enter your email address to sign in</string>
+    <string name="community_list_heading">Community-list</string>
+    <string name="community_invite">%s has invited you to join their community %s.</string>
+    <string name="community_invite_label">%s has invited you to join community %s, Join to share.</string>
+    <string name="invite_points">• Group buying</string>
+    <string name="view_community"><u><b>View community</b></u></string>
+    <string name="expire_msg">This invite will be expired on 08–25–2024.</string>
+    <string name="rejected_invite_msg">%s has Declined your invitation.</string>
+
+    <string name="cancel_heading">Cancel</string>
+    <string name="admin_heading">Admin</string>
+    <string name="login_heading">Log in</string>
+    <string name="email_error_msg">Email address not found!</string>
+    <string name="remove_item">Remove Item</string>
+    <string name="are_you_sure_you_want_to_delete">Are you sure you want to delete ?</string>
+    <string name="delete">Delete</string>
+    <string name="decline_label">Decline</string>
+    <string name="accept_label">Accept</string>
+    <string name="invited_title_label">You\'re invited to a community</string>
+
+</resources>

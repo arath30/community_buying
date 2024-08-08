@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph_community"
+    app:startDestination="@id/memberFragment">
+
+    <!--<fragment
+        android:id="@+id/communityListFragment"
+        android:name="com.albertson.spark_poc.presentation.fragment.CommunityListFragment"
+        android:label="CommunityListFragment" >
+        <action
+            android:id="@+id/action_communityListFragment_to_createCommunityFragment"
+            app:destination="@id/createCommunityFragment" />
+        <action
+            android:id="@+id/action_communityListFragment_to_memberFragment"
+            app:destination="@id/memberFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createCommunityFragment"
+        android:name="com.albertson.spark_poc.presentation.fragment.CreateCommunityFragment"
+        android:label="CreateCommunityFragment" >
+        <action
+            android:id="@+id/action_createCommunityFragment_to_communityListFragment"
+            app:destination="@id/communityListFragment" />
+    </fragment>-->
+    <fragment
+        android:id="@+id/addMemberFragment"
+        android:name="com.albertson.spark_poc.presentation.fragment.AddMemberFragment"
+        android:label="AddMemberFragment" >
+        <action
+            android:id="@+id/action_addMemberFragment_to_memberFragment"
+            app:destination="@id/memberFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/memberFragment"
+        android:name="com.albertson.spark_poc.presentation.fragment.MemberFragment"
+        android:label="MemberFragment" >
+        <action
+            android:id="@+id/action_memberFragment_to_addMemberFragment"
+            app:destination="@id/addMemberFragment" />
+    </fragment>
+</navigation>

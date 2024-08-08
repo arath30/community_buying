@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="StepperView">
+        <attr name="collapsedWidth" format="dimension" />
+        <attr name="expandedWidth" format="dimension" />
+        <attr name="colorTheme" format="color" />
+        <attr name="moduleType" format="integer" />
+        <attr name="showToastMsg" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="BaseStepperView">
+        <attr name="quantity" format="integer" />
+        <attr name="stepperFor" format="string" />
+        <attr name="maxQuantity" format="integer" />
+        <attr name="apiTime" format="integer" />
+        <attr name="weightValue" format="float" />
+        <attr name="maxWeight" format="float" />
+        <attr name="weightIncrement" format="float" />
+        <attr name="weightType" format="string" />
+        <attr name="displayType" format="integer" />
+    </declare-styleable>
+</resources>

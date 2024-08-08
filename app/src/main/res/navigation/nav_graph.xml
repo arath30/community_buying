@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/communityListFragment"
+        android:name="com.albertson.spark_poc.presentation.fragment.CommunityListFragment"
+        android:label="CommunityListFragment" >
+        <action
+            android:id="@+id/action_communityListFragment_to_createCommunityFragment"
+            app:destination="@id/createCommunityFragment" />
+        <action
+            android:id="@+id/action_communityListFragment_to_myCommunityDashBoard"
+            app:destination="@id/myCommunityDashBoard" />
+    </fragment>
+    <fragment
+        android:id="@+id/createCommunityFragment"
+        android:name="com.albertson.spark_poc.presentation.fragment.CreateCommunityFragment"
+        android:label="CreateCommunityFragment" >
+        <action
+            android:id="@+id/action_createCommunityFragment_to_communityListFragment"
+            app:destination="@id/communityListFragment" />
+        <!--<action
+            android:id="@+id/action_createCommunityFragment_to_myCommunityDashBoard"
+            app:destination="@id/myCommunityDashBoard" />-->
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/myCommunityDashBoard"
+        android:name="com.albertson.spark_poc.presentation.fragment.MyCommunityDashBoard"
+        android:label="MyCommunityDashBoard" >
+        <action
+            android:id="@+id/action_myCommunityDashBoard_to_memberFragment"
+            app:destination="@id/memberFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.albertson.spark_poc.presentation.fragment.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_accountFragment"
+            app:destination="@id/accountFragment" />
+
+        <action
+            android:id="@+id/action_homeFragment_to_myCommunityDashBoard"
+            app:destination="@id/myCommunityDashBoard" />
+
+        <action
+            android:id="@+id/action_homeFragment_to_createCommunityFragment"
+            app:destination="@id/createCommunityFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/accountFragment"
+        android:name="com.albertson.spark_poc.presentation.fragment.AccountFragment"
+        android:label="fragment_account"
+        tools:layout="@layout/fragment_account" >
+
+        <action
+            android:id="@+id/action_accountFragment_to_communityListFragment"
+            app:destination="@id/communityListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/productListFragment"
+        android:name="com.albertson.spark_poc.presentation.fragment.ProductListFragment"
+        android:label="ProductListFragment" />
+</navigation>

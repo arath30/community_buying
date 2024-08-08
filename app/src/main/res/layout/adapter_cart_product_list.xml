@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="position"
+            type="Integer" />
+
+        <variable
+            name="outsideTouch"
+            type="Boolean" />
+
+        <variable
+            name="product"
+            type="com.albertson.spark_poc.data.local.entity.ProductCommunityUser" />
+
+        <variable
+            name="isAdmin"
+            type="Boolean" />
+
+        <variable
+            name="touchEnable"
+            type="Boolean" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_main_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardElevation="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_sub_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp">
+
+            <ImageView
+                android:id="@+id/iv_product_image"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:importantForAccessibility="no"
+                android:src="@drawable/breast_lean"
+                app:layout_constraintBottom_toBottomOf="@id/tv_base_price"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_product_name" />
+
+            <TextView
+                android:id="@+id/tv_product_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:text="@{product.product_name}"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toStartOf="@id/ll_stepper_view"
+                app:layout_constraintStart_toEndOf="@id/iv_product_image"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_base_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{`$`+product.product_discount_price +`/`+product.product_weight}"
+                android:layout_marginTop="5dp"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="@id/tv_product_name"
+                app:layout_constraintTop_toBottomOf="@id/tv_product_name" />
+
+            <TextView
+                android:id="@+id/tv_discounted_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{`$`+product.product_base_price +`/`+product.product_weight}"
+                android:textColor="@android:color/darker_gray"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="1dp"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@id/tv_base_price"
+                app:layout_constraintBottom_toBottomOf="@id/tv_base_price" />
+
+            <View
+                android:id="@+id/separator"
+                android:layout_width="0dp"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="12dp"
+                android:background="@android:color/darker_gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_base_price" />
+
+            <TextView
+                android:id="@+id/tv_community_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@string/community_label"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@id/iv_product_image"
+                app:layout_constraintTop_toBottomOf="@id/separator" />
+
+            <TextView
+                android:id="@+id/tv_community_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="@{product.community_name}"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@id/tv_community_label"
+                app:layout_constraintTop_toTopOf="@id/tv_community_label" />
+
+            <TextView
+                android:id="@+id/tv_member_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/member_label"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@id/iv_product_image"
+                app:layout_constraintTop_toBottomOf="@id/tv_community_name" />
+
+            <TextView
+                android:id="@+id/tv_member_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="@{product.member_name}"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@id/tv_member_label"
+                app:layout_constraintTop_toTopOf="@id/tv_member_label" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_remove_product"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_delete"
+                android:visibility="@{isAdmin ? View.VISIBLE : View.GONE}"
+                app:layout_constraintEnd_toEndOf="@id/tv_price"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/ll_stepper_view"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:gravity="center"
+                app:layout_constraintEnd_toStartOf="@id/tv_price"
+                app:layout_constraintTop_toTopOf="@id/tv_product_name">
+
+                <com.albertson.spark_poc.presentation.customview.CustomStepperView
+                    android:id="@+id/stepper_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:outsideTouch="@{outsideTouch}"
+                    app:touchEnable="@{touchEnable}"
+                    app:position="@{position}"
+                    app:quantity="@{product.product_quantity}"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_product_name" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>
